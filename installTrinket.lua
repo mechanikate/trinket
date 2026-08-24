@@ -8,7 +8,7 @@ local internet = require("internet")
 local fs = require("filesystem")
 function readurl(url)
   r = ""
-  for chunk in internet.request("https://" .. url) do r = r .. chunk end
+  for chunk in internet.request(url) do r = r .. chunk end
   return tostring(r)
 end
 function saveUrlToFile(url, fn)
